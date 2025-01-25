@@ -65,4 +65,27 @@
 
 ### 2.1 LSTM
 
+LSTM（Long Short-Term Memory）是一种特殊的RNN，它在内部引入了门（gate）结构，使得它能够学习长期依赖。
+
+#### 2.1.1 LSTM网络的循环单元结构
+
+![LSTM循环单元结构](../images/day27/LSTM网络的循环单元结构.png)
+
+#### 2.1.2 LSTM公式
+
+$$f_t = \sigma(W_f · [h_{t-1},x_t] + b_f)$$
+$$i_t = \sigma(W_i · [h_{t-1},x_t] + b_i)$$
+$$\tilde{C_t} = \tanh(W_C · [h_{t-1},x_t] + b_C)$$
+$$C_t = f_t * C_{t-1} + i_t * \tilde{C_t}$$
+$$o_t = \sigma(W_o · [h_{t-1},x_t] + b_o)$$
+$$h_t = o_t * \tanh(C_t)$$
+
+其中：
+
+- $[h_{t-1},x_t]$是输入，$W_f,W_i,W_C,W_o$是权重矩阵，$b_f,b_i,b_C,b_o$是偏置向量。
+- $\sigma$是sigmoid函数。
+- $f_t,i_t,o_t$是门（gate）的输出，$C_t$是单元的输出，$h_t$是单元的隐藏状态。
+
 ### 2.2 GRU
+
+GRU 即 Gated Recurrent Unit。前面说到为了克服 RNN 无法很好处理远距离依赖而提出了LSTM，而 GRU 则是 LSTM 的一个变体，当然 LSTM 还有有很多其他的变体。GRU 保持了LSTM的效果同时又使结构更加简单，所以它也非常流行
