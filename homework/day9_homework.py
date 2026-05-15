@@ -183,15 +183,15 @@ def find_second_match(pattern, text):
 
 if __name__ == '__main__':
     # homework1
-    # shallow_copy()
-    # deep_copy()
+    shallow_copy()
+    deep_copy()
     # homework2
     # single_match()
     # multiple_matches()
     # group_matching()
     # homework3
-    advanced_use_re()
-    text = "abc123def456ghi789"
-    pattern = r"\d+"
-    second_match = find_second_match(pattern, text)
-    print(second_match)
+    # advanced_use_re()
+    # text = "abc123def456ghi789"
+    # pattern = r"\d+"
+    # second_match = find_second_match(pattern, text)
+    # print(second_match)
